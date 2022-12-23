@@ -2,8 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const { default: mongoose } = require("mongoose");
 const _ = require("lodash");
-const app = express();
 require("dotenv").config();
+const app = express();
 
 app.set('view engine', 'ejs');
 
@@ -12,7 +12,7 @@ let port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@cluster0.laxbeql.mongodb.net/todolistDB`, (err) => {
+mongoose.connect(process.env.MONGO_URL, (err) => {
   if (err)
     console.log(err);
   else
