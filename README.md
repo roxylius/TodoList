@@ -1,0 +1,2 @@
+# TodoList
+A todo list made using Node.js, MongoDB, and the Mongoose framework is a web application that allows users to create, view, and manage a list of tasks or items that they need to complete. The application uses Node.js as the server-side runtime environment, MongoDB as the database to store the todo list items, and the Mongoose framework as an object-document mapping library to connect the Node.js application to the MongoDB database.
