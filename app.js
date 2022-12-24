@@ -12,11 +12,28 @@ let port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+// mongoose.connect(process.env.MONGO_URL, (err) => {
+//   if (err)
+//     console.log(err);
+//   else
+//     console.log("successfully connected to mongoDB sever!");
+// });
+
+// for web deployment in cyclic 
 mongoose.connect(process.env.MONGO_URL, (err) => {
   if (err)
     console.log(err);
-  else
+  else {
     console.log("successfully connected to mongoDB sever!");
+    app.listen(port, function () {
+      if (port == null)
+        console.log("Server started on 3000...");
+      else
+        console.log("Server started on " + port);
+    });
+
+
+  }
 });
 
 const itemSchema = new mongoose.Schema({
@@ -173,11 +190,11 @@ app.get("/about", function (req, res) {
   res.render("about");
 });
 
-app.listen(port, function () {
-  if (port == null)
-    console.log("Server started on 3000...");
-  else
-    console.log("Server started on " + port);
-});
+// app.listen(port, function () {
+//   if (port == null)
+//     console.log("Server started on 3000...");
+//   else
+//     console.log("Server started on " + port);
+// });
 
 
