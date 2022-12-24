@@ -26,11 +26,9 @@ npm install
 
 ## Environment Variables
 
-There are 2 environment variables:
+There are 1 environment variable:
 
-1. **MONGO_USER** : MongoDB Project's database username
-
-2. **MONGO_PASS** : MongoDB Project's database password
+1. **MONGO_URL** : MongoDB Database cluster connection URI with username and password  
 
 ## Usage
 
